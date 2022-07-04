@@ -1,14 +1,23 @@
-import CategoryItem from "../category-item/category-item.component";
+import {
+    BackgroundImage,
+    Body,
+    DirectoryItemContainer,
+} from './directory-item.styles';
 
-import "./directory.styles.scss";
 
-const Directory = ({ categories }) => {
+const Directory = ({ category }) => {
+  const { imageUrl, title } = category;
+
   return (
-    <div className="directory-container">
-      {categories.map((category) => (
-        <CategoryItem key={category.id} category={category} />
-      ))}
-    </div>
+    <DirectoryItemContainer>
+        <BackgroundImage imageUrl={imageUrl} />
+
+        <Body>
+          <h2>{title}</h2>
+          <p>Shop Now</p>
+        </Body>
+        
+    </DirectoryItemContainer>
   );
 };
 

@@ -2,7 +2,7 @@ import {
     BackgroundImage,
     Body,
     DirectoryItemContainer,
-} from './directory-item.styles';
+} from './directory.styles';
 
 
 const Directory = ({ category }) => {

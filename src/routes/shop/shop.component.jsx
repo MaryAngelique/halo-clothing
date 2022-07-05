@@ -8,8 +8,7 @@ import { setCategories } from "../../store/categories/categories.action";
 
 
 import CategoryPreview from "../../components/category-preview/category-preview.component";
-
-import { CategoriesContext } from "../../context/categories.context";
+import Category from "../category/category.component";
 
 import "./shop.styles.scss";
 

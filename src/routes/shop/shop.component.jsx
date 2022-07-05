@@ -1,4 +1,11 @@
-import { useContext } from "react";
+import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { getCategoriesAndDocuments } from "../../utils/firebase.utils";
+
+import { setCategories } from "../../store/categories/categories.action";
+
 
 import CategoryPreview from "../../components/category-preview/category-preview.component";
 
@@ -7,16 +14,21 @@ import { CategoriesContext } from "../../context/categories.context";
 import "./shop.styles.scss";
 
 const Shop = () => {
-    const { categoriesMap } = useContext(CategoriesContext);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const getCategoriesMap = async () => {
+            const categories = await getCategoriesAndDocuments("categories");
+            dispatch(setCategories(categories));
+        };
+
+        getCategoriesMap();
+    }, []);
 
     return (
-        <div className="shop-container">
-            {Object.keys(categoriesMap).map((key) => {
-                const products = categoriesMap[key];
-                
-                return <CategoryPreview key={key} title={key} products={products} />;
-            })}
-      </div>
+        <Routes>
+            <Route index element={<CategoryPreview />} />
+        </Routes>
     );
 };
 

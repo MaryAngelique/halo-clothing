@@ -11,7 +11,7 @@ import { setCurrentUser } from "./store/user/user.action";
 import {
     onAuthStateChangedListener,
     createUserDocumentFromAuth,
-} from "./utils/firebase/firebase.utils";
+} from "./utils/firebase.utils";
 
 
 const App = () => {

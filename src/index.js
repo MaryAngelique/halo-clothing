@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import { CategoriesProvider } from "../src/context/categories.context";
-import { CartProvider } from "./contexts/cart.context";
+import { CartProvider } from "./context/cart.context";
 import { store } from "./store/store";
 
 const rootElement = document.getElementById("root");

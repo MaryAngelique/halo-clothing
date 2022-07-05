@@ -3,24 +3,25 @@ import { render } from "react-dom";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 
-import { UserProvider } from "../src/context/user.context";
 import { CategoriesProvider } from "../src/context/categories.context";
-import { CartProvider } from "./context/cart.context";
+import { CartProvider } from "./contexts/cart.context";
+import { store } from "./store/store";
 
 const rootElement = document.getElementById("root");
 
 render(
   <React.StrictMode>
-   <BrowserRouter>
-      <UserProvider>
-        <CategoriesProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </CategoriesProvider>
-      </UserProvider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+          <CategoriesProvider>
+            <CartProvider>
+              <App />
+            </CartProvider>
+          </CategoriesProvider>
+        </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   rootElement
 );

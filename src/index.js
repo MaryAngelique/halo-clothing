@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 
 import { CategoriesProvider } from "../src/context/categories.context";
 import { CartProvider } from "./context/cart.context";
-import { store } from "./store/store";
+import { store } from "../src/store/store";
 
 const rootElement = document.getElementById("root");
 

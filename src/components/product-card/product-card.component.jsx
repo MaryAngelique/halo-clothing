@@ -1,8 +1,14 @@
-import { useContext } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { CartContext } from "../../context/cart.context";
+import { selectCartItems } from "../../store/cart/cart.selector";
+import { addItemToCart } from "../../store/cart/cart.action";
 
-import "./product-card.styles.scss";
+import {
+    ProductCartContainer,
+    Footer,
+    Name,
+    Price,
+} from "./product-card.styles.jsx";
 
 import Button from "../button/button.component"
 

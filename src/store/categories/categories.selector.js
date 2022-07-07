@@ -1,9 +1,9 @@
 import { createSelector } from "reselect";
 
-const selectCategories = (state) => state.categories;
+const selectCategoriesReducer = (state) => state.categories;
 
 export const selectCategoriesMap = createSelector(
-    [selectCategories],
+    [selectCategoriesReducer],
     (categories) => {
         console.log("within selector");
         console.log(categories);
@@ -24,3 +24,9 @@ export const selectCatMap = ({ categories }) => {
         return acc;
     }, {});
 };
+
+export const selectIsLoading = createSelector(
+    [selectCategoriesReducer],
+    (categoriesSlice) => categoriesSlice.isLoading
+);
+  

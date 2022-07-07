@@ -1,45 +1,58 @@
-import { useContext } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { CartContext } from "../../context/cart.context";
+import {
+    clearItemFromCart,
+    addItemToCart,
+    removeItemFromCart,
+} from "../../store/cart/cart.action";
 
-import "./checkout-item.styles.scss";
+import { selectCartItems } from "../../store/cart/cart.selector";
+
+import {
+    CheckoutItemContainer,
+    ImageContainer,
+    BaseSpan,
+    Quantity,
+    Arrow,
+    Value,
+    RemoveButton,
+} from "./checkout-item.styles";
 
 const CheckoutItem = ({ cartItem }) => {
     const { name, imageUrl, price, quantity } = cartItem;
+    const dispatch = useDispatch();
+    const cartItems = useSelector(selectCartItems);
 
-    const { clearItemFromCart, addItemToCart, removeItemToCart } =
-        useContext(CartContext);
-
-    const clearItemHandler = () => clearItemFromCart(cartItem);
-    const addItemHandler = () => addItemToCart(cartItem);
-    const removeItemHandler = () => removeItemToCart(cartItem);
+    const clearItemHandler = () => dispatch(clearItemFromCart(cartItems, cartItem));
+    const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
+    const removeItemHandler = () => dispatch(removeItemFromCart(cartItems, cartItem));
 
     return (
-        <div className="checkout-item-container">
-            <div className="image-container">
+        <CheckoutItemContainer>
+            <ImageContainer>
                 <img src={imageUrl} alt={`${name}`} />
-            </div>
+            </ImageContainer>
 
-            <span className="name"> {name} </span>
+            <BaseSpan> {name} </BaseSpan>
             
-            <span className="quantity">
-                <div className="arrow" onClick={removeItemHandler}>
+            <Quantity>
+                <Arrow onClick={removeItemHandler}>
                     &#10094;
-                </div>
+                </Arrow>
 
-                <span className="value">{quantity}</span>
+                <Value>{quantity}</Value>
 
-                <div className="arrow" onClick={addItemHandler}>
+                <Arrow onClick={addItemHandler}>
                     &#10095;
-                </div>
-            </span>
+                </Arrow>
+            </Quantity>
 
-            <span className="price"> {price}</span>
+            <BaseSpan> {price}</BaseSpan>
             
-            <div className="remove-button" onClick={clearItemHandler}>
+            <RemoveButton onClick={clearItemHandler}>
                 &#10005;
-            </div>
-        </div>
+            </RemoveButton>
+        </CheckoutItemContainer>
     );
 };
 

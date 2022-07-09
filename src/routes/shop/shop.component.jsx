@@ -8,8 +8,6 @@ import { fetchCategoriesStartAsync } from "../../store/categories/categories.act
 import CategoryPreview from "../../components/category-preview/category-preview.component";
 import Category from "../category/category.component";
 
-import "./shop.styles.scss";
-
 const Shop = () => {
     const dispatch = useDispatch();
 

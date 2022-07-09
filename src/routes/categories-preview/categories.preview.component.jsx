@@ -18,10 +18,10 @@ const CategoriesPreview = () => {
                 <Spinner />
             ) : (
                 Object.keys(categoriesMap).map((title) => {
-                const products = categoriesMap[title];
-                return (
-                    <CategoryPreview key={title} title={title} products={products} />
-                );
+                    const products = categoriesMap[title];
+                    return (
+                        <CategoryPreview key={title} title={title} products={products} />
+                    );
                 })
             )}
         </Fragment>

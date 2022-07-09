@@ -3,19 +3,11 @@ export const loggerMiddleware = (store) => (next) => (action) => {
         return next(action);
     }
 
-    console.groupCollapsed(action.type);
-    console.log('Previous State: ');
-    const prevState = store.getState();
-    console.log({ prevState });
-    console.info('Dispatching action: ');
-    console.info({ action });
+    console.log("type: ", action.type);
+    console.log("payload: ", action.payload);
+    console.log("currentState: ", store.getState());
 
-    const result = next(action);
-    console.log('Next state: ');
-    const nextState = store.getState();
+    next(action);
 
-    console.info({ nextState });
-    console.groupEnd();
-
-    return result;
+    console.log("next state: ", store.getState());
 };

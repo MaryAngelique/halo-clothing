@@ -9,8 +9,6 @@ import { signOutStart } from "../../store/user/user.action";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
-import { signOutUser } from "../../utils/firebase.utils"
-
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
 
 import {

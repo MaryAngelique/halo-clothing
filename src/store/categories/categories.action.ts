@@ -1,11 +1,11 @@
-import { CATEGORIES_ACTION_TYPES, Category } from "./categories.types";
+import { CATEGORIES_ACTION_TYPES, Category } from "./categories.types.ts";
 
 import {
     createAction,
     Action,
     withMatcher,
     ActionWithPayload,
-} from "../../utils/reducer.utils";
+} from "../../utils/reducer.utils.ts";
 
 export type FetchCategoriesStart =
     Action<CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START>;

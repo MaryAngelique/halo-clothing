@@ -1,4 +1,4 @@
-import { USER_ACTION_TYPES } from "./user.types.ts";
+import { USER_ACTION_TYPES } from "./user.types";
 
 import { 
     createAction,

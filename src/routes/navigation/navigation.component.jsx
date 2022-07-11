@@ -2,9 +2,9 @@ import { Fragment, useContext } from "react";
 import { Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux"
 
-import { selectCurrentUser } from "../../store/user/user.selector.js";
-import { selectIsCartOpen } from "../../store/cart/cart.selector.js";
-import { signOutStart } from "../../store/user/user.action";
+import { selectCurrentUser } from "../../store/user/user.selector.ts";
+import { selectIsCartOpen } from "../../store/cart/cart.selector.ts";
+import { signOutStart } from "../../store/user/user.action.ts";
 
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";

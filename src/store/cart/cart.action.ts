@@ -1,9 +1,10 @@
-import { CART_ACTION_TYPES, CartItem } from "./cart.types";
+import { CART_ACTION_TYPES, CartItem } from "./cart.types.ts";
+
 import {
   createAction,
   ActionWithPayload,
   withMatcher,
-} from "../../utils/reducer.utils";
+} from "../../utils/reducer.utils.ts";
 import { CategoryItem } from "../categories/categories.types";
 
 const addCartItem = (

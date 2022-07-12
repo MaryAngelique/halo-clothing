@@ -29,13 +29,13 @@ const Button: FC<ButtonProps> = ({
     buttonType,
     isLoading,
     ...otherProps
-  }) => {
+}) => {
     const CustomButton = getButton(buttonType);
     return (
         <CustomButton disabled={isLoading} {...otherProps}>
             {isLoading ? <ButtonSpinner /> : children}
         </CustomButton>
-        );
+    );
 };
   
 export default Button;

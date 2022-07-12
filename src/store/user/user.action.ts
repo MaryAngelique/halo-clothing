@@ -1,11 +1,11 @@
-import { USER_ACTION_TYPES } from "./user.types.ts";
+import { USER_ACTION_TYPES } from "./user.types";
 
 import { 
     createAction,
     Action,
     ActionWithPayload,
     withMatcher
-} from "../../utils/reducer.utils.ts";
+} from "../../utils/reducer.utils";
 
 import { 
     UserData,

@@ -4,9 +4,9 @@ import {
     clearItemFromCart,
     addItemToCart,
     removeItemFromCart,
-} from "../../store/cart/cart.action.ts";
+} from "../../store/cart/cart.action";
 
-import { selectCartItems } from "../../store/cart/cart.selector.ts";
+import { selectCartItems } from "../../store/cart/cart.selector";
 
 import {
     CheckoutItemContainer,

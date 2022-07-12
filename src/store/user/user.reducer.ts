@@ -6,9 +6,9 @@ import {
     signInFailed,
     signUpFailed,
     signOutFailed,
-} from "./user.action.ts";
+} from "./user.action";
 
-import { UserData } from "../../utils/firebase.utils.ts"
+import { UserData } from "../../utils/firebase.utils"
 
 export type UserState = {
     readonly currentUser: UserData | null;

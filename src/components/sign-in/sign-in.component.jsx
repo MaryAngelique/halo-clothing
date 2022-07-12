@@ -8,7 +8,7 @@ import BUTTON_TYPE_CLASSES from "../button/button.component";
 import {
         googleSignInStart,
         emailSignInStart,
-} from "../../store/user/user.action.ts";
+} from "../../store/user/user.action";
 
 import { SignInContainer, ButtonsContainer } from "./sign-in.styles";
 

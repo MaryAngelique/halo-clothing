@@ -1,14 +1,22 @@
-import { useState } from "react";
+import React, { useState, FormEvent } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { StripeCardElement } from "@stripe/stripe-js";
 import { useSelector } from "react-redux";
 
 import { selectCartTotal } from "../../store/cart/cart.selector";
 import { selectCurrentUser } from "../../store/user/user.selector";
 
-import { FormContainer } from "./payment-form.styles";
 import { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
-import { PaymentButton, PaymentFormContainer } from "./payment-form.styles";
+import {
+    PaymentFormContainer,
+    FormContainer,
+    PaymentButton,
+} from "./payment-form.styles";
+
+const ifValidCardElement = (
+    card: StripeCardElement | null
+): card is StripeCardElement => card !== null;
 
 const PaymentForm = () => {
     const stripe = useStripe();
@@ -17,7 +25,7 @@ const PaymentForm = () => {
     const currentUser = useSelector(selectCurrentUser);
     const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
-    const paymentHandler = async (e) => {
+    const paymentHandler = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!stripe || !elements) {
             return;

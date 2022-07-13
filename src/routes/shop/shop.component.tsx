@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { fetchCategoriesStart } from "../../store/categories/categories.action.ts";
+import { fetchCategoriesStart } from "../../store/categories/categories.action";
 
 
 import CategoryPreview from "../../components/category-preview/category-preview.component";
@@ -17,7 +17,7 @@ const Shop = () => {
 
     return (
         <Routes>
-            <Route index element={<CategoryPreview />} />
+            <Route index element={<CategoryPreview title={""} products={[]} />} />
         </Routes>
     );
 };

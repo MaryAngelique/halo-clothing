@@ -19,7 +19,7 @@ const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { displayName, email, password, confirmPassword } = formFields;
     const dispatch = useDispatch();
-    
+
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
     };
@@ -28,7 +28,7 @@ const SignUpForm = () => {
         event.preventDefault();
 
         if (password !== confirmPassword) {
-            alert('passwords do not match');
+            alert("passwords do not match");
             return;
         }
 
@@ -37,9 +37,9 @@ const SignUpForm = () => {
             resetFormFields();
         } catch (error) {
             if ((error as AuthError).code === AuthErrorCodes.EMAIL_EXISTS) {
-                alert('Cannot create user, email already in use');
+                alert("Cannot create user, email already in use");
             } else {
-                console.log('user creation encountered an error', error);
+                console.log("user creation encountered an error", error);
             }
         }
     };

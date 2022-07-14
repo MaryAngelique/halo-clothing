@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 import Spinner from "./components/spinner/spinner.component";
 import { checkUserSession } from "./store/user/user.action";
- 
+
 const Navigation = lazy(() =>
   import("./routes/navigation/navigation.component")
 );

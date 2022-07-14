@@ -8,7 +8,8 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Elements } from "@stripe/react-stripe-js"
 
 import { store, persistor } from "../src/store/store";
-import { stripePromise } from "./utils/stripe.utils"
+import { stripePromise } from "./utils/stripe.utils";
+import * as registerServiceWorker from './serviceWorkerRegistration';
 
 const rootElement = document.getElementById("root");
 

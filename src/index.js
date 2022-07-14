@@ -27,3 +27,5 @@ render(
   </React.StrictMode>,
   rootElement
 );
+
+registerServiceWorker.register();

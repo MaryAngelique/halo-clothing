@@ -3,7 +3,7 @@ import { useEffect, lazy, Suspense } from "react";
 import { useDispatch } from "react-redux"
  
 import Spinner from "./components/spinner/spinner.component";
-import { checkUserSession } from "./store/user/user.action";
+import { checkUserSession } from "./store/user/user.action.ts";
 import { GlobalStyle } from "./global.styles";
 
 const Navigation = lazy(() =>
